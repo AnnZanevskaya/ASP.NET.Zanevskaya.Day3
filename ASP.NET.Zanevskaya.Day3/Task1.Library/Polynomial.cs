@@ -9,8 +9,8 @@ namespace Task1.Library
     public sealed class Polynomial : ICloneable, IEquatable<Polynomial>
     {
         private double[] coefficients;
-        private int minDegree = 0;
-        public int MinDegree {
+        private int degree = 0;
+        public int Degree {
             get 
             {
                 return this.coefficients.Length - 1; 
