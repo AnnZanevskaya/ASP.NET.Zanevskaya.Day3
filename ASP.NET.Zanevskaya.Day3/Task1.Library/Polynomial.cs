@@ -41,9 +41,9 @@ namespace Task1.Library
         
         }
         public static Polynomial operator +(Polynomial firstP, Polynomial secondP)
-        {
-            if ((object)firstP == null) throw new ArgumentNullException("firstP");
-            if ((object)secondP == null) throw new ArgumentNullException("secondSP");
+        { 
+            if (Object.ReferenceEquals(firstP,null)) throw new ArgumentNullException("firstP");
+            if (Object.ReferenceEquals(secondP,null)) throw new ArgumentNullException("secondP");
             Polynomial sumP, tempP;
             if (firstP.coefficients.Length > secondP.coefficients.Length)
             {
@@ -63,7 +63,7 @@ namespace Task1.Library
         }
         public static Polynomial operator +(Polynomial firstP, double number)
         {
-            if ((object)firstP == null) throw new ArgumentNullException("firstP");
+            if (Object.ReferenceEquals(firstP,null)) throw new ArgumentNullException("firstP");
             Polynomial sum = Copy(firstP);
             sum[0] += number;
             return sum;
@@ -86,7 +86,7 @@ namespace Task1.Library
         }
         public static Polynomial operator -(Polynomial firstP)
         {
-            if ((object)firstP == null) throw new ArgumentNullException("firstP");
+            if (Object.ReferenceEquals(firstP,null)) throw new ArgumentNullException("firstP");
             Polynomial negativeP = Copy(firstP);
             for (int i = 0; i < negativeP.coefficients.Length; i++)
             {
@@ -123,7 +123,7 @@ namespace Task1.Library
         }
         public static Polynomial operator *(Polynomial firstP, double number)
         {
-            if ((object)firstP == null) throw new ArgumentNullException("firstP");
+            if (Object.ReferenceEquals(firstP,null)) throw new ArgumentNullException("firstP");
             Polynomial sum = Copy(firstP);
             for (int i = 0; i < sum.coefficients.Length; i++)
 			{
@@ -145,7 +145,7 @@ namespace Task1.Library
         }
         public bool Equals(Polynomial other)
         {
-            if ((object)other == null) throw new ArgumentNullException("NULL");
+            if (Object.ReferenceEquals(firstP,null)) throw new ArgumentNullException("firstP");
             if (this.coefficients.Length != other.coefficients.Length) return false;
             for (int i = 0; i < this.coefficients.Length; i++)
             {
@@ -179,7 +179,7 @@ namespace Task1.Library
         }
         public override bool Equals(object obj)
         {
-            if ((object)obj == null) throw new ArgumentNullException("NULL"); ;
+            if (Object.ReferenceEquals(obj,null)) throw new ArgumentNullException("null");
             if (coefficients.Length > 1) return false;
             if (obj.GetType() != typeof(int) && obj.GetType() != typeof(double)) return false;
             if (obj.GetType() == typeof(int) && this.coefficients[0] == (int)obj) return true;
