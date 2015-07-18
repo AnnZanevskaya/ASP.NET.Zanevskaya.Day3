@@ -145,7 +145,7 @@ namespace Task1.Library
         }
         public bool Equals(Polynomial other)
         {
-            if (Object.ReferenceEquals(firstP,null)) throw new ArgumentNullException("firstP");
+            if (Object.ReferenceEquals(other,null)) throw new ArgumentNullException("null");
             if (this.coefficients.Length != other.coefficients.Length) return false;
             for (int i = 0; i < this.coefficients.Length; i++)
             {
