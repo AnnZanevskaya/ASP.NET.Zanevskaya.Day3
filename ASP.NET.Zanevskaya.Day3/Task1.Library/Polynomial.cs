@@ -27,6 +27,20 @@ namespace Task1.Library
             }
             return result;
         }
+         public double this[int i]
+        {
+            get
+            {
+                if (i > coefficients.Length - 1) throw new ArgumentOutOfRangeException();
+                return coefficients[i];
+            }
+            set
+            {
+                if (i > coefficients.Length - 1) throw new ArgumentOutOfRangeException();
+                coefficients[i] = value;
+            }
+        
+        }
         public static Polynomial operator +(Polynomial firstP, Polynomial secondP)
         {
             if ((object)firstP == null) throw new ArgumentNullException("firstP");
@@ -210,19 +224,6 @@ namespace Task1.Library
             }
             return copyP;
         }
-        private double this[int i]
-        {
-            get
-            {
-                if (i > coefficients.Length - 1) throw new ArgumentOutOfRangeException();
-                return coefficients[i];
-            }
-            set
-            {
-                if (i > coefficients.Length - 1) throw new ArgumentOutOfRangeException();
-                coefficients[i] = value;
-            }
-        
-        }
+       
     }
 }
