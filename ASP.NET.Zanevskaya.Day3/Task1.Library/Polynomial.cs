@@ -9,14 +9,13 @@ namespace Task1.Library
     public sealed class Polynomial : ICloneable, IEquatable<Polynomial>
     {
         private double[] coefficients;
-        public Polynomial()
-        {
-            coefficients = new double[1];
-            coefficients[0] = 1;
-        }
         public Polynomial(params double[] coefficients)
         {
-            this.coefficients = coefficients;
+            this.coefficients = new double[coefficients.Length];
+            for (int i = 0; i < coefficients.Length; i++)
++            {
++                this[i] = coeffs[i];
++            }
         }
         public double ResultOfPolynomial(double variable)
         {          
